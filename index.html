@@ -3,61 +3,63 @@
 <head>
 	<meta charset="utf-8">
 	<title>WikiG3</title>
+			
+	<!--Link de cada css-->
+	<link rel="stylesheet" href="css/escritorio.css" media="only screen and (min-width: 800px)" />
+	<link rel="stylesheet" href="css/tablet.css" media="only screen and (min-width: 500px) and (max-width: 799px)" />
+	<link rel="stylesheet" href="css/movil.css" media="only screen and (max-width: 499px)" />
+	
+	<!--Link del icono de la pestaña-->
+	<link rel="icon" type="image/png" href="Imagenes/logo.png">
+	
+	<script type="text/javascript">
+		// funcion para recoger la fecha
+		function cambiafecha(){
+		var fecha= new Date();
+		// escribir la fecha en el elemento que tiene "fecha" como id.
+		document.getElementById("fecha").innerHTML="Fecha de hoy "+fecha;
+		}
 
-			<link rel="stylesheet" href="css/escritorio.css" media="only screen and (min-width: 800px)" />
-
-			<link rel="stylesheet" href="css/tablet.css" media="only screen and (min-width: 500px) and (max-width: 799px)" />
-			<link rel="stylesheet" href="css/movil.css" media="only screen and (max-width: 499px)" />
-
-
-			<link rel="icon" type="image/png" href="Imagenes/logo.png">
-<script type="text/javascript">
-
-
-
-
-
-function cambiafecha(){
-var fecha= new Date();
-document.getElementById("fecha").innerHTML="Fecha de hoy "+fecha;
-}
-
-var click=0;
-function muestramenu(){
-
-
-	if(click==0){
-	document.getElementById("navegador").style.display="block";
-	click++;
-}
-else{
+		
+		
+		// variable que controla los clicks hechos en el menu
+		var click=0;
+		function muestramenu(){
+		if(click==0){
+		// muestra el menu
+		document.getElementById("navegador").style.display="block";
+		click++;
+		}
+		else{
+		// lo oculta
 		document.getElementById("navegador").style.display="none";
 		click=0;
-}
-}
-function menu(){
+		}
+		}
+		
+		
+		
+		// funcion que controla si el tamaño del navegador es superior a 800
+		// entonces muestra el menu y sino lo oculta
+		function menu(){
 		if(innerWidth>=800){
 		document.getElementById("navegador").style.display="block";
-	}
-	else{
+		}
+		else{
 			document.getElementById("navegador").style.display="none";
-	}
+		}
 
-}
+		}
 
 
-</script>
+	</script>
 
 
 
 
 </head>
 
-
-
-
-
-
+<!--Cuando se cargue el body recarga la fecha y cuando cambie el tamaño del navegador ejecuta la funcion "menu()"-->
 <body onload="cambiafecha()" onresize="menu()">
 
 
@@ -91,13 +93,14 @@ function menu(){
 <p>&reg Grupo3 S.A.</p> 
 <p>Marca registrada por G3 Development.</p>
 <p>CIFP Txurdinaga LHII</p>
+<!--Aqui se pone la fecha del script-->
 <p id="fecha"></p>
 <ul>
 	<li>Desarrolladores</li>
 			<a href="mailto:manolete@gmail.com"><li>Nerea</li></a>
 			<a href="mailto:lacazzete@gmail.com"><li>Alkacem</li></a>
 			<a href="mailto:vanessa@gmail.com"><li>Vanessa</li></a>
-			<a href="mailto:elni�ochaja@gmail.com"><li>David</li></a>
+			<a href="mailto:elniÃochaja@gmail.com"><li>David</li></a>
 </ul>
 </article>
 </footer>
