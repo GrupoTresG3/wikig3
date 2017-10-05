@@ -1,0 +1,4 @@
+AuthName "Restringido"
+AuthType basic
+AuthUserFile /home/password.txt
+require valid-user
