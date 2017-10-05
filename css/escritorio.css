@@ -1,5 +1,8 @@
 
-/*reset*/
+/*Que todos los elementos no 
+tengan esas propiedades para que 
+no haya espacios en blanco entre 
+el header,footer... y borde del navegador*/
 *{
 	margin : 0;
 	padding : 0;
@@ -15,6 +18,10 @@ header{
 
 }
 
+/*imagen del menu que ahora 
+no se puede ver porque es solo para
+tablet y movil
+*/
 #menubar{
 	display: none;
 }
@@ -23,9 +30,12 @@ header h1{
 	float: left;
 	width: 80%;
 }
+/*Logos de facebook,twitter...*/
 .logos{
 	width: 5%;
 }
+
+/*al hacer hover en los logos ejecuta la funcion*/
 .logos:hover{
 		animation:girar 2s infinite;
 
@@ -36,7 +46,6 @@ nav{
 
 }
 
-/*Navegador principal*/
 nav ul{
 	list-style: none;
 	margin:0;
@@ -89,6 +98,7 @@ li .italic{
 	font-style: italic;
 }
 
+/*position fixed para que se quede fijo*/
 aside{
 	position: fixed;
 	float: left;
@@ -106,6 +116,7 @@ aside ol{
 	padding: 0.2em 0 0 1.2em;
 }
 
+/*tiene 3 columnas con una raya de 0.2em*/
 footer{
 	background: #b3b3b3;
 	margin-top: 0.5em;
@@ -130,28 +141,14 @@ footer a{
 
 /*ANIMACIONES*/
 
+/*Animacion de los logos*/
 @keyframes girar {
     to {
     	transform: rotate(360deg);
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*EXCLUSIVO DE LA PAGINA INDEX.HTML*/
 div.arriba {
     width: 25%;
     animation-name: arriba;
