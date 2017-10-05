@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WikiG3</title>
+
+			<link rel="stylesheet" href="css/escritorio.css" media="only screen and (min-width: 800px)" />
+
+			<link rel="stylesheet" href="css/tablet.css" media="only screen and (min-width: 500px) and (max-width: 799px)" />
+			<link rel="stylesheet" href="css/movil.css" media="only screen and (max-width: 499px)" />
+
+			<link rel="icon" type="image/png" href="Imagenes/logo.png">
+<script type="text/javascript">
+
+
+
+
+
+function cambiafecha(){
+var fecha= new Date();
+document.getElementById("fecha").innerHTML="Fecha de hoy "+fecha;
+}
+
+var click=0;
+function muestramenu(){
+
+
+	if(click==0){
+	document.getElementById("navegador").style.display="block";
+	click++;
+}
+else{
+		document.getElementById("navegador").style.display="none";
+		click=0;
+}
+}
+function menu(){
+		if(innerWidth>=800){
+		document.getElementById("navegador").style.display="block";
+	}
+	else{
+			document.getElementById("navegador").style.display="none";
+	}
+
+}
+
+
+</script>
+
+
+
+
+</head>
+
+
+
+
+
+
+<body onload="cambiafecha()" onresize="menu()">
+
+
+<header>
+<a href="#"><img id="menubar" onclick="muestramenu()" src="Imagenes/menu.png"></a>
+<h1>WikiG3</h1>
+<a href="https://web.whatsapp.com/" target="blank"> <img class="logos" src="Imagenes/wasa.png"/></a>
+<a href="https://es-es.facebook.com/" target="blank"><img class="logos" src="Imagenes/facebook.png"/></a>
+<a href="https://twitter.com/" target="blank"><img class="logos" src="Imagenes/twitter.png"/></a>
+</header>
+
+
+<!--Navegador situado a la izquierda de la pagina-->
+<nav id="navegador">
+	<ul>
+		<a href="index.html"><li>Inicio</li></a>
+		<a href="IP.html"><li>Instalar Proxmox</li></a>
+		<a href="CP.html"><li>Configurar Proxmox</li></a>
+		<a href="apache.html"><li>Apache</li></a>
+		<a href=""><li>GIT-GITHUB</li></a>
+
+	</ul>
+</nav>
+
+
+
+<section>
+
+
+<!--En este aside va el indice fijo del tutorial-->
+<aside>
+<h1>Indice</h1>
+	<ol>
+		<span class="negrita">GIT</span>
+		<a href="#paso1"><li>Instalar</li></a>
+		<a href="#paso2"><li>Iniciar</li></a>
+		<a href="#paso3"><li>Configurar</li></a>
+		<a href="#paso4"><li>Copia</li></a>
+		<a href="#paso5"><li>Comprobar</li></a>
+		<a href="#paso6"><li>Consolidarlo</li></a>
+		<a href="#paso7"><li>Mostrar consolidaciones</li></a>
+		<a href="#paso8"><li>2ª comprobacion</li></a>
+		<a href="#paso9"><li>Añadir cambio</li></a>
+	</ol>
+
+
+	<ol>
+		<span class="negrita">GITHUB</span>
+		<a href="#paso10"><li>Registro</li></a>
+		<a href="#paso11"><li>Crear repositorio</li></a>
+		<a href="#paso12"><li>Subir a la nube</li></a>
+		<a href="#paso13"><li>Bajar a local</li></a>
+		<a href="#paso13"><li>Descargar cambios</li></a>
+		<a href="#paso15"><li>Eliminar repositorio en la nube</li></a>
+		<a href="#paso16"><li>eliminar repositorio en local</li></a>
+		
+	</ol>
+</aside>
+
+
+<article>
+<h1>Instalar y configurar GIT</h1>
+
+<!--Para poner paso a paso el manual-->
+<ol>
+	
+	<li id="paso1">
+	<span class="negrita">Instalar git </span>- "apt-get install git".
+	<img class="imagenarticulo" src="Imagenes/git-github/paso1.png"/>
+	</li>
+
+
+	<li id="paso2">
+	<span class="negrita">Iniciar git </span>(Se hace en la carpeta donde se realizará la copia) - "git init".
+	<img class="imagenarticulo" src="Imagenes/git-github/paso2.png"/>
+	</li>
+
+
+	<li id="paso3">
+	<span class="negrita">Configurar correo </span>- "git config --global user.email "tuemail" ".
+	<img class="imagenarticulo" src="Imagenes/git-github/paso3.png"/>
+	</li>
+
+
+	<li id="paso4">
+	<span class="negrita">Hacer la primera copia </span>- "git add ." (El punto copia todo lo que hay).
+	<img class="imagenarticulo" src="Imagenes/git-github/paso4.png"/>
+	</li>
+
+	<li id="paso5">
+	<span class="negrita">Comprobar si hay cambios para hacer commit</span>, en este caso ya se han guardado - "git status".
+	<img class="imagenarticulo" src="Imagenes/git-github/paso5.png"/>
+	</li>
+
+
+	<li id="paso6">
+	<span class="negrita">Consolidarlo o cerrarlo (Confirmarlo) </span>- "git commit -m "nombre" ".
+	<img class="imagenarticulo" src="Imagenes/git-github/paso6.png"/>
+	</li>
+
+
+	<li id="paso7">
+	<span class="negrita">Mostrar consolidaciones </span>- "git log".
+	<img class="imagenarticulo" src="Imagenes/git-github/log.png"/>
+	</li>
+
+
+	<li id="paso8">
+	<span class="negrita">Mostrar cambios para hacer commit despues de crear otro documento </span>- "git status".
+	<img class="imagenarticulo" src="Imagenes/git-github/paso8.png"/>
+	</li>
+
+
+	<li id="paso9">
+	<span class="negrita">Añadir un cambio nuevo </span>- "git add nombrearchivo" y comprobar que se puede hacer commit.
+	<img class="imagenarticulo" src="Imagenes/git-github/paso9.png"/>
+	</li>
+</ol>
+
+
+
+<h1>Utilizar GIT-HUB</h1>
+
+<!--Para poner paso a paso el manual-->
+<ol>
+	
+	<li id="paso10">
+	Entrar a la web de <a href="https://github.com"> github</a> y despues de registrarse iniciar sesion.
+	<img class="imagenarticulo" src="Imagenes/github/1.png"/>
+	<img class="imagenarticulo" src="Imagenes/github/2.png"/>
+	</li>
+
+
+	<li id="paso11">
+	Para crear el primer repositorio hay que darle a "Start a proyect", elegir el nombre y darle a "Create repository".
+	<img class="imagenarticulo" src="Imagenes/github/3.png"/>
+	<img class="imagenarticulo" src="Imagenes/github/4.png"/>
+	</li>
+
+	<li id="paso12">
+	Una vez creado vamos a ubuntu para crear varios archivos y subirlos a github. Con el comando "git remote add origin URL" (la URL es la del repositorio que hemos creado) le indicamos cual es nuestro repositorio remoto y con "git push -u origin master" lo subimos al repositorio en la nube. Y comprobamos como se han subido los archivos.
+	<img class="imagenarticulo" src="Imagenes/github/6.png"/>
+	<img class="imagenarticulo" src="Imagenes/github/7.png"/>
+	<img class="imagenarticulo" src="Imagenes/github/8.png"/>
+	</li>
+
+
+	<li id="paso13">
+	Para bajar los archivos del repositorio que tenemos en la nube utilizamos el comando "git clone URL", para comprobar su funcionamiento eliminamos lo que tenemos en local.
+	<img class="imagenarticulo" src="Imagenes/github/9.png"/>
+	<img class="imagenarticulo" src="Imagenes/github/10.png"/>
+	</li>
+
+
+
+	<li id="paso14">
+	Con el comando "git pull origin master" y si previamente hemos utilizado "git clone" nos descargara en nuestro repositorio local en la rama master(se puede poner otra rama) los cambios que se hayan realizado. Para comprobarlo creamos un fichero en la nube y despues ejecutamos el comando. Como hemos puesto "master" lo descarga en "www" porque es la rama que nosotros hemos utilizado como master.
+	<img class="imagenarticulo" src="Imagenes/github/11.png"/>
+	<img class="imagenarticulo" src="Imagenes/github/12.png"/>
+	</li>
+
+	<li id="paso15">
+	Para eliminar el repositorio en la nube vamos a "Settings", despues bajamos hasta abajo y "Delete this repository" y finalmente escribimos el nombre de nuestro repositorio para confirmarlo y se eliminará. 
+	<img class="imagenarticulo" src="Imagenes/github/14.png"/>
+	<img class="imagenarticulo" src="Imagenes/github/15.png"/>
+	<img class="imagenarticulo" src="Imagenes/github/16.png"/>
+	</li>
+
+
+	<li id="paso16">
+	<span class="negrita">Borrar repositorio en local</span>: 
+	<p>"git remote rm origin".</p>
+	<p>"git config master.remote origin".</p>
+	<p>"git config master.merge refs/heads/master".</p>
+	</li>
+</ol>
+
+</article>
+</section>
+
+
+
+
+<footer>
+<img src="Imagenes/txurdi.png">
+
+<article id="footer">
+	
+
+<p>&copy Grupo3. Todos los izquierdos reservados.</p>
+<p>&reg Grupo3 S.A.</p> 
+<p>Marca registrada por G3 Development.</p>
+<p>CIFP Txurdinaga LHII</p>
+<p id="fecha"></p>
+<ul>
+	<li>Desarrolladores</li>
+			<a href="mailto:manolete@gmail.com"><li>Nerea</li></a>
+			<a href="mailto:manolete@gmail.com"><li>Alkacem</li></a>
+			<a href="mailto:manolete@gmail.com"><li>Vanessa</li></a>
+			<a href="mailto:manolete@gmail.com"><li>David</li></a>
+</ul>
+</article>
+</footer>
+
+
+
+</body>
+</html>

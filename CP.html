@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WikiG3</title>
+
+			<link rel="stylesheet" href="css/escritorio.css" media="only screen and (min-width: 800px)" />
+
+			<link rel="stylesheet" href="css/tablet.css" media="only screen and (min-width: 500px) and (max-width: 799px)" />
+			<link rel="stylesheet" href="css/movil.css" media="only screen and (max-width: 499px)" />
+
+			<link rel="icon" type="image/png" href="Imagenes/logo.png">
+
+<script type="text/javascript">
+
+
+
+
+
+function cambiafecha(){
+var fecha= new Date();
+document.getElementById("fecha").innerHTML="Fecha de hoy "+fecha;
+}
+
+var click=0;
+function muestramenu(){
+
+
+	if(click==0){
+	document.getElementById("navegador").style.display="block";
+	click++;
+}
+else{
+		document.getElementById("navegador").style.display="none";
+		click=0;
+}
+}
+function menu(){
+		if(innerWidth>=800){
+		document.getElementById("navegador").style.display="block";
+	}
+	else{
+			document.getElementById("navegador").style.display="none";
+	}
+
+}
+
+
+</script>
+
+
+
+
+</head>
+
+
+
+
+
+
+<body onload="cambiafecha()" onresize="menu()">
+
+
+<header>
+<a href="#"><img id="menubar" onclick="muestramenu()" src="Imagenes/menu.png"></a>
+<h1>WikiG3</h1>
+<a href="https://web.whatsapp.com/" target="blank"> <img class="logos" src="Imagenes/wasa.png"/></a>
+<a href="https://es-es.facebook.com/" target="blank"><img class="logos" src="Imagenes/facebook.png"/></a>
+<a href="https://twitter.com/" target="blank"><img class="logos" src="Imagenes/twitter.png"/></a>
+</header>
+
+
+<!--Navegador situado a la izquierda de la pagina-->
+<nav id="navegador">
+	<ul>
+		<a href="index.html"><li>Inicio</li></a>
+		<a href="IP.html"><li>Instalar Proxmox</li></a>
+		<a href=""><li>Configurar Proxmox</li></a>
+		<a href="apache.html"><li>Apache</li></a>
+		<a href="GIT-GITHUB.html"><li>GIT-GITHUB</li></a>
+
+	</ul>
+</nav>
+
+
+
+<section>
+
+
+<!--En este aside va el indice fijo del tutorial-->
+<aside>
+<h1>Indice</h1>
+	<ol>
+		<a href="#paso1"><li>Instalar plantilla</li></a>
+		<a href="#paso2"><li>Seleccionar plantilla</li></a>
+		<a href="#paso3"><li>Crear contenedor</li></a>
+		<a href="#paso4"><li>Plantilla</li></a>
+		<a href="#paso5"><li>Siguiente</li></a>
+		<a href="#paso6"><li>Redes</li></a>
+		<a href="#paso7"><li>DNS</li></a>
+		<a href="#paso8"><li>Conectar</li></a>
+</aside>
+
+
+<article>
+<h1>Configurar Proxmox</h1>
+
+<!--Para poner paso a paso el manual-->
+<ol>
+	
+	<li id="paso1">
+	<span class="negrita">Instalar plantilla de máquina ubuntu server.</span>
+	<p>Vamos a “local(castellano)” → “Contenido” → “Plantillas”.</p>
+	<img class="imagenarticulo" src="Imagenes/CP/PLANTILLA/1.png"/>
+	</li>
+
+
+	<li id="paso2">
+	<span class="negrita">Seleccionar plantilla.</span>
+	<p>Nos aparecerá una lista de versiones de ubuntu y entre todas seleccionamos la “12.04-1” → “Descargar”. Anteriormente lo hicimos con la versión “17.04-1” y como nos dió problemas al crear el contenedor decidimos usar esta otra.</p>
+	<img class="imagenarticulo" src="Imagenes/CP/PLANTILLA/2.png"/>
+	</li>
+
+
+	<li id="paso3">
+	<span class="negrita">Crear contenedor.</span>
+	<p>Vamos a “Crear CT” → En la primera pestaña “General” rellenaremos el “ID”, el “Nombre del Host” y “Contraseña” → “Siguiente.</p>
+	<img class="imagenarticulo" src="Imagenes/CP/CT/1.png"/>
+
+		<li id="paso4">
+		<span class="negrita">Pestaña plantillas.</span>
+		<p>Seleccionaremos la que hemos instalado en el paso anterior → “Siguiente”.</p>
+		<img class="imagenarticulo" src="Imagenes/CP/CT/2.png"/>
+		</li>
+
+
+		<li id="paso5">
+		En las siguientes capturas lo único que hay que hacer es darle a “Siguiente” ya que la configuración por defecto está a nuestro gusto.
+		<img class="imagenarticulo" src="Imagenes/CP/CT/3.png"/>
+		<img class="imagenarticulo" src="Imagenes/CP/CT/4.png"/>
+		<img class="imagenarticulo" src="Imagenes/CP/CT/5.png"/>
+		</li>
+
+
+		<li id="paso6">
+		<span class="negrita">Pestaña redes.</span>
+		<p>Pondremos la “IPV4” y la “Puerta de enlace” → "Siguiente".</p>
+		<img class="imagenarticulo" src="Imagenes/CP/CT/6.png"/>
+		</li>
+
+
+		<li id="paso7">
+		<span class="negrita">Pestaña DNS.</span>
+		<p>Escribiremos el “Dominio DNS” → “Siguiente”.</p>
+		<img class="imagenarticulo" src="Imagenes/CP/CT/7.png"/>
+		</li>
+	</li>
+
+	<li id="paso8">
+	Con esto ya habremos creado el contenedor, en el panel de la izquierda seleccionaremos el nuestro (300(G3)) y automáticamente se nos abrirá la máquina ubuntu.
+	<img class="imagenarticulo" src="Imagenes/CP/CT/8.png"/>
+	</li>
+</ol>
+
+</article>
+</section>
+
+
+
+
+<footer>
+<img src="Imagenes/txurdi.png">
+
+<article id="footer">
+	
+
+<p>&copy Grupo3. Todos los izquierdos reservados.</p>
+<p>&reg Grupo3 S.A.</p> 
+<p>Marca registrada por G3 Development.</p>
+<p>CIFP Txurdinaga LHII</p>
+<p id="fecha"></p>
+<ul>
+	<li>Desarrolladores</li>
+			<a href="mailto:manolete@gmail.com"><li>Nerea</li></a>
+			<a href="mailto:manolete@gmail.com"><li>Alkacem</li></a>
+			<a href="mailto:manolete@gmail.com"><li>Vanessa</li></a>
+			<a href="mailto:manolete@gmail.com"><li>David</li></a>
+</ul>
+</article>
+</footer>
+
+
+
+</body>
+</html>

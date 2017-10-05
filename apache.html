@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>WikiG3</title>
+
+			<link rel="stylesheet" href="css/escritorio.css" media="only screen and (min-width: 800px)" />
+
+			<link rel="stylesheet" href="css/tablet.css" media="only screen and (min-width: 500px) and (max-width: 799px)" />
+			<link rel="stylesheet" href="css/movil.css" media="only screen and (max-width: 499px)" />
+
+			<link rel="icon" type="image/png" href="Imagenes/logo.png">
+
+
+<script type="text/javascript">
+
+
+
+
+
+function cambiafecha(){
+var fecha= new Date();
+document.getElementById("fecha").innerHTML="Fecha de hoy "+fecha;
+}
+
+var click=0;
+function muestramenu(){
+
+
+	if(click==0){
+	document.getElementById("navegador").style.display="block";
+	click++;
+}
+else{
+		document.getElementById("navegador").style.display="none";
+		click=0;
+}
+}
+function menu(){
+		if(innerWidth>=800){
+		document.getElementById("navegador").style.display="block";
+	}
+	else{
+			document.getElementById("navegador").style.display="none";
+	}
+
+}
+
+
+</script>
+
+
+
+
+</head>
+
+
+
+
+
+
+<body onload="cambiafecha()" onresize="menu()">
+
+
+<header>
+<a href="#"><img id="menubar" onclick="muestramenu()" src="Imagenes/menu.png"></a>
+<h1>WikiG3</h1>
+<a href="https://web.whatsapp.com/" target="blank"> <img class="logos" src="Imagenes/wasa.png"/></a>
+<a href="https://es-es.facebook.com/" target="blank"><img class="logos" src="Imagenes/facebook.png"/></a>
+<a href="https://twitter.com/" target="blank"><img class="logos" src="Imagenes/twitter.png"/></a>
+</header>
+
+
+<!--Navegador situado a la izquierda de la pagina-->
+<nav id="navegador">
+	<ul>
+
+		<a href="index.html"><li>Inicio</li></a>
+		<a href="IP.html"><li>Instalar Proxmox</li></a>
+		<a href="CP.html"><li>Configurar Proxmox</li></a>
+		<a href=""><li>Apache</li></a>
+		<a href="GIT-GITHUB.html"><li>GIT-GITHUB</li></a>
+
+	</ul>
+</nav>
+
+
+<section>
+
+
+<!--En este aside va el indice fijo del tutorial-->
+<aside>
+<h1>Indice</h1>
+	<ol>
+		<li><a href="#apaso1" >paso 1</a></li>
+		<li><a href="#apaso2" >paso 2</a></li>
+		<li><a href="#apaso3" >paso 3</a></li>
+		<li><a href="#apaso4" >paso 4</a></li>
+		<li><a href="#apaso5" >paso 5</a></li>
+		<li><a href="#apaso6" >paso 6</a></li>
+		<li><a href="#apaso7" >paso 7</a></li>
+	</ol>
+</aside>
+
+
+<article>
+<h1>Apache</h1>
+
+<!--Para poner paso a paso el manual-->
+<ol>
+	<li><a name="apaso1">Para comenzar a instalar APACHE primero debemos de actualizar los repositorios:<br/><span class="italic"> apt-get update</span>
+	<img class="imagenarticulo" src="Imagenes/AP/update.png"></a></li>
+	<li><a name="apaso2">Una vez actualizados, pasaremos a instalar apache con el comando <br/> <span class="italic">apt-get install apache2</span>
+	<img class="imagenarticulo" src="Imagenes/AP/instapache.png"></a></li>
+	<li><a name="apaso3">Cuando ya est&aacute; instalado comprobamos el fichero de configuraci&oacute;n con la siguiente orden<br/><span class="italic"> nano /etc/apache2/apache2.conf</span>
+	<img class="imagenarticulo" src="Imagenes/AP/confapache.png"></a></li>
+	<li><a name="apaso4">Una vez comprobado, veremos la index que viene por defecto <br/> <span class="italic">nano /var/index/www/index.html</span>
+	<img class="imagenarticulo" src="Imagenes/AP/txtindexdefecto.png"></a></li>
+	<li><a name="apaso5">Accedemos con el navegador a nuestra IP para comprobar la index.
+	<img class="imagenarticulo" src="Imagenes/AP/indexdefecto.png"></a></li>
+	<li><a name="apaso6">La editaremos d&aacute;ndole la apariencia que deseemos.
+	<img class="imagenarticulo" src="Imagenes/AP/txtindexmodificada.png"></a></li>
+	<li><a name="apaso7">Finalmente, desde el navegador accederemos a nuestra IP para comprobar la p&aacute;gina que hemos creado.
+	<img class="imagenarticulo" src="Imagenes/AP/indexmodificada.png"></a></li>
+</ol>
+</article>
+</section>
+
+
+
+
+<footer>
+<img src="Imagenes/txurdi.png">
+
+<article id="footer">
+	
+
+<p>&copy Grupo3. Todos los izquierdos reservados.</p>
+<p>&reg Grupo3 S.A.</p> 
+<p>Marca registrada por G3 Development.</p>
+<p>CIFP Txurdinaga LHII</p>
+<p id="fecha"></p>
+<ul>
+	<li>Desarrolladores</li>
+			<a href="mailto:manolete@gmail.com"><li>Nerea</li></a>
+			<a href="mailto:manolete@gmail.com"><li>Alkacem</li></a>
+			<a href="mailto:manolete@gmail.com"><li>Vanessa</li></a>
+			<a href="mailto:manolete@gmail.com"><li>David</li></a>
+</ul>
+</article>
+</footer>
+
+
+
+</body>
+</html>

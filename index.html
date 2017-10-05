@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WikiG3</title>
+
+			<link rel="stylesheet" href="css/escritorio.css" media="only screen and (min-width: 800px)" />
+
+			<link rel="stylesheet" href="css/tablet.css" media="only screen and (min-width: 500px) and (max-width: 799px)" />
+			<link rel="stylesheet" href="css/movil.css" media="only screen and (max-width: 499px)" />
+
+
+			<link rel="icon" type="image/png" href="Imagenes/logo.png">
+<script type="text/javascript">
+
+
+
+
+
+function cambiafecha(){
+var fecha= new Date();
+document.getElementById("fecha").innerHTML="Fecha de hoy "+fecha;
+}
+
+var click=0;
+function muestramenu(){
+
+
+	if(click==0){
+	document.getElementById("navegador").style.display="block";
+	click++;
+}
+else{
+		document.getElementById("navegador").style.display="none";
+		click=0;
+}
+}
+function menu(){
+		if(innerWidth>=800){
+		document.getElementById("navegador").style.display="block";
+	}
+	else{
+			document.getElementById("navegador").style.display="none";
+	}
+
+}
+
+
+</script>
+
+
+
+
+</head>
+
+
+
+
+
+
+<body onload="cambiafecha()" onresize="menu()">
+
+
+<header>
+<h1>WikiG3</h1>
+<a href="https://web.whatsapp.com/" target="blank"> <img class="logos" src="Imagenes/wasa.png"/></a>
+<a href="https://es-es.facebook.com/" target="blank"><img class="logos" src="Imagenes/facebook.png"/></a>
+<a href="https://twitter.com/" target="blank"><img class="logos" src="Imagenes/twitter.png"/></a>
+</header>
+
+
+<section>
+
+<a href="IP.html"><div class="izquierda arriba"><img src="Imagenes/proxmoxl.png">  </div></a>
+<a href="CP.html"><div class="derecha arriba"> <img src="Imagenes/confproxl.png"> </div></a>
+<a href="apache.html.html"><div class="izquierda abajo" > <img src="Imagenes/apachel.png"> </div></a>
+<a href="GIT-GITHUB.html"><div class="derecha abajo" > <img src="Imagenes/githubl.png"></div></a>
+
+
+</section>
+
+
+
+<footer>
+<img src="Imagenes/txurdi.png">
+
+<article id="footer">
+	
+
+<p>&copy Grupo3. Todos los izquierdos reservados.</p>
+<p>&reg Grupo3 S.A.</p> 
+<p>Marca registrada por G3 Development.</p>
+<p>CIFP Txurdinaga LHII</p>
+<p id="fecha"></p>
+<ul>
+	<li>Desarrolladores</li>
+			<li>Nerea</li>
+			<li>Alkacem</li>
+			<li>Vanessa</li>
+			<li>David</li>
+</ul>
+</article>
+</footer>
+
+
+
+</body>
+</html>

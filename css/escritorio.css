@@ -1,0 +1,190 @@
+
+/*reset*/
+*{
+	margin : 0;
+	padding : 0;
+}
+
+
+header{
+	background: #333333;
+	color: white;
+	padding: 1em;
+	border: 0.3em solid black;
+	max-height: 60px;
+
+}
+
+#menubar{
+	display: none;
+}
+
+header h1{
+	float: left;
+	width: 80%;
+}
+.logos{
+	width: 5%;
+}
+.logos:hover{
+		animation:girar 2s infinite;
+
+}
+
+nav{
+	margin-top: 0.5em;
+
+}
+
+/*Navegador principal*/
+nav ul{
+	list-style: none;
+	margin:0;
+}
+
+
+nav ul li{
+	padding: 1em;
+	border:0.2em solid black;
+	background: #b3b3b3;
+	display: inline-flex;
+	color: white;
+}
+
+
+nav ul li:hover{
+background:  #4d4d4d;
+}
+
+
+section{
+	width: 100%;
+}
+section article{
+	width: 70%;
+	margin-left: 20%;
+	border:0.2em solid black;
+	padding: 0.5em;
+	text-align: left;
+	margin-top: 0.5em;
+}
+section article ol li{
+	margin: 1.4em;
+}
+
+.imagenarticulo{
+	width: 50%;
+	height: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+	margin-top:2%;
+	margin-bottom: 2%;
+}
+
+span.negrita {
+    font-weight: bold;
+}
+
+li .italic{
+	font-style: italic;
+}
+
+aside{
+	position: fixed;
+	float: left;
+	width: 13%;
+	border:0.2em solid gray;
+	border-radius: 1em;
+	padding-left: 1.2em;
+	background: gray;
+	margin: 0.5em 0 0 0.5em;
+}
+
+
+
+aside ol{
+	padding: 0.2em 0 0 1.2em;
+}
+
+footer{
+	background: #b3b3b3;
+	margin-top: 0.5em;
+	padding: 1em 0 1em 4em;
+	font-style:italic;
+	column-count:3;
+	column-rule: 0.2em inset darkgray;
+}
+footer ul li ol, footer ul{
+	list-style: none;
+}
+
+footer img{
+	width: 10em;
+}
+
+footer a{
+	text-decoration: none;
+}
+
+
+
+/*ANIMACIONES*/
+
+@keyframes girar {
+    to {
+    	transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div.arriba {
+    width: 25%;
+    animation-name: arriba;
+    animation-duration: 6s;
+    display: inline-flex;
+    margin-top: 5%;
+}
+
+@keyframes arriba {
+    from   {margin-top:0px;}
+    to {margin-top:5%;}
+   
+}
+
+div.abajo {
+    width: 25%;
+    animation-name: abajo;
+    animation-duration: 6s;
+    display: inline-flex;
+    margin-bottom: 5%;
+}
+
+@keyframes abajo {
+    from   {margin-top:600px;margin-bottom: 0px;}
+    to {margin-top:0px;margin-bottom: 5%;}
+   
+}
+
+div.izquierda{
+	margin-left: 23%;
+	margin-right: 2%;
+}
+
+div.derecha{
+	margin-right: 23%;
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+	<title>WikiG3</title>
+
+			<link rel="stylesheet" href="css/escritorio.css" media="only screen and (min-width: 800px)" />
+
+			<link rel="stylesheet" href="css/tablet.css" media="only screen and (min-width: 500px) and (max-width: 799px)" />
+			<link rel="stylesheet" href="css/movil.css" media="only screen and (max-width: 499px)" />
+
+			<link rel="icon" type="image/png" href="Imagenes/logo.png">
+
+
+<script type="text/javascript">
+
+
+
+
+
+function cambiafecha(){
+var fecha= new Date();
+document.getElementById("fecha").innerHTML="Fecha de hoy "+fecha;
+}
+
+var click=0;
+function muestramenu(){
+
+
+	if(click==0){
+	document.getElementById("navegador").style.display="block";
+	click++;
+}
+else{
+		document.getElementById("navegador").style.display="none";
+		click=0;
+}
+}
+function menu(){
+		if(innerWidth>=800){
+		document.getElementById("navegador").style.display="block";
+	}
+	else{
+			document.getElementById("navegador").style.display="none";
+	}
+
+}
+
+
+</script>
+
+
+
+
+</head>
+
+
+
+
+
+
+<body onload="cambiafecha()" onresize="menu()">
+
+
+<header>
+<a href="#"><img id="menubar" onclick="muestramenu()" src="Imagenes/menu.png"></a>
+<h1>WikiG3</h1>
+<a href="https://web.whatsapp.com/" target="blank"> <img class="logos" src="Imagenes/wasa.png"/></a>
+<a href="https://es-es.facebook.com/" target="blank"><img class="logos" src="Imagenes/facebook.png"/></a>
+<a href="https://twitter.com/" target="blank"><img class="logos" src="Imagenes/twitter.png"/></a>
+</header>
+
+
+<!--Navegador situado a la izquierda de la pagina-->
+<nav id="navegador">
+	<ul>
+
+		<a href="index.html"><li>Inicio</li></a>
+		<a href=""><li>Instalar Proxmox</li></a>
+		<a href="CP.html"><li>Configurar Proxmox</li></a>
+		<a href="apache.html"><li>Apache</li></a>
+		<a href="GIT-GITHUB.html"><li>GIT-GITHUB</li></a>
+
+	</ul>
+</nav>
+
+
+<section>
+
+
+<!--En este aside va el indice fijo del tutorial-->
+<aside>
+<h1>Indice</h1>
+	<ol>
+		<li><a href="#ippaso1">Descargar ISO</a></li>
+		<li><a href="#ippaso2">Montar ISO</a></li>
+		<li><a href="#ippaso3">Dispositivo</a></li>
+		<li><a href="#ippaso4">Primera Pantalla</a></li>
+		<li><a href="#ippaso5">Licencia</a></li>
+		<li><a href="#ippaso6">Destino Proxmox</a></li>
+		<li><a href="#ippaso7">Pais</a></li>
+		<li><a href="#ippaso8">Correo @</a></li>
+		<li><a href="#ippaso9">Direcciones IP</a></li>
+		<li><a href="#ippaso10">Reiniciar</a></li>
+		<li><a href="#ippaso11">Conectarse</a></li>
+	</ol>
+</aside>
+
+
+<article>
+<h1>Instalar Proxmox</h1>
+
+<!--Para poner paso a paso el manual-->
+<ol>
+	<li><a name="ippaso1"></a>Descargamos la ISO de la última versión de PROXMOX desde la pagina oficial de <a href="https://www.proxmox.com/en/downloads">PROXMOX</a>, actualmente es la Proxmox VE 5.0 ISO Installer. 
+	<img class="imagenarticulo" src="Imagenes/IP/DescargarISO.png">
+	</li>
+	<li><a name="ippaso2"></a>Una vez tengamos la ISO, usamos la herramienta de Ubuntu “Creador de discos de arranque” para montar dicha ISO en algun PenDrive o CD.
+	<img class="imagenarticulo" src="Imagenes/IP/MontarISO.png">
+	</li>
+	<li><a name="ippaso3"></a>Una vez lo tenemos todo listo, tenemos que meter el PenDrive o CD en nuestro servidor y arrancar desde nuestro dispositivo con la ISO montada
+	</li>
+	<li><a name="ippaso4"></a>Cuando arrancamos se nos muestra una primera pantalla que se queda esperando hasta que le demos a Intro.
+	<img class="imagenarticulo" src="Imagenes/IP/insprox1.png">
+	</li>
+	<li><a name="ippaso5"></a>Le damos a enter y esperamos a que nos carge la siguiente pantalla en la que nos pregunta si aceptamos los acuerdo de licencia. Le decimos que sí para continuar.
+	<img class="imagenarticulo" src="Imagenes/IP/insprox2.png">
+	</li>
+	<li><a name="ippaso6"></a>Lo siguiente que nos pregunta es donde queremos instalar Proxmox. Como tenemos solamente un disco pues no nos deja escoger nada más que ese
+	<img class="imagenarticulo" src="Imagenes/IP/insprox3.png">
+	</li>
+	<li><a name="ippaso7"></a>Le damos a Next, y lo que nos pregunta a continuación es: El País, la zona horaria y el idioma del teclado
+	<img class="imagenarticulo" src="Imagenes/IP/insprox4.png">
+	</li>
+	<li><a name="ippaso8"></a>Lo siguiente que nos pide es una contraseña para el usuario root, que será con la que nos vamos a validar, también nos pide una dirección de correo que es para cuando el servidor tenga un fallo se nos pueda notificar por correo.
+	<img class="imagenarticulo" src="Imagenes/IP/insprox5.png">
+	</li>
+	<li><a name="ippaso9"></a>Le damos a Next y lo siguiente que tenemos que rellenar es:
+	<ul>
+	<li><span class="negrita"> FQDN (Fully Qualified Domain Name)</span>: Es el nombre completo de la máquina es decir el nombre + dominio al que pertenece.</li>
+	<li><span class="negrita">Dirección IP</span>: Si en la red que estamos hay un servidor DHCP la IP se asignará automáticamente, si nos gusta esa dirección la dejamos tal cual, o si queremos cambiarla la podemos hacer siempre y cuando pertenezca a la misma red en la que nos encontramos.</li>
+	<li><span class="negrita">Máscara</span>: Una acorde a nuestra red.</li>
+	<li><span class="negrita">Gateway</span>: La dirección por donde saldremos a Internet.</li>
+	<li><span class="negrita">Servidor DNS</span>: Es importante que tengamos salida a Internet para poder hacer una actualización por lo menos la primera vez después de instalarlo, ya que dependiendo de la fecha que descarguemos el software se habrán hecho mejoras que sería bueno tenerla actualizadas, más que nada por seguridad.</li>
+	</ul>
+	<img class="imagenarticulo" src="Imagenes/IP/insprox6.png">
+	</li>
+	<li><a name="ippaso10"></a>Una vez rellenados los campos anteriores, le damos a Next y esperamos a que se nos instale. Si ya ha terminado de hacer la instalación. Enhorabuena ya tienes un servidor Proxmox. Ahora sólo queda reiniciar el servidor.
+	<img class="imagenarticulo" src="Imagenes/IP/insprox7.png">
+	</li>
+	<li><a name="ippaso11"></a>Al reiniciarse la máquina nos encontramos con una consola en la que nos tenemos que logear con el usuario root y la contraseña que le dimos en la instalación. También podemos darnos cuenta que nos muestra la dirección del servidor web con el que nos podemos conectar desde un navegador para poder hacer las configuraciones de una forma más amigable.
+	<img class="imagenarticulo" src="Imagenes/IP/insprox8.png">
+	</li>
+</ol>
+
+</article>
+</section>
+
+
+
+<footer>
+<img src="Imagenes/txurdi.png">
+
+<article id="footer">
+	
+
+<p>&copy Grupo3. Todos los izquierdos reservados.</p>
+<p>&reg Grupo3 S.A.</p> 
+<p>Marca registrada por G3 Development.</p>
+<p>CIFP Txurdinaga LHII</p>
+<p id="fecha"></p>
+<ul>
+	<li>Desarrolladores</li>
+			<a href="mailto:manolete@gmail.com"><li>Nerea</li></a>
+			<a href="mailto:manolete@gmail.com"><li>Alkacem</li></a>
+			<a href="mailto:manolete@gmail.com"><li>Vanessa</li></a>
+			<a href="mailto:manolete@gmail.com"><li>David</li></a>
+</ul>
+</article>
+</footer>
+
+
+
+</body>
+</html>
